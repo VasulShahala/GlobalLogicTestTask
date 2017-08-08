@@ -16,69 +16,19 @@ namespace GlobalLogicTestTask
 
              
             List<FileSrtuct> Fileslist = new List<FileSrtuct>();
-              string address,address2;
+              string address;
               Console.WriteLine("Enter full address to folder");
               address= Console.ReadLine();
              // address = @"D:\\Games";
             Serialize(address);
-           address2= Console.ReadLine();
+         
 
-           // address2 = @"D:\";
-            DeSerialDir(address2);
 
               Console.ReadLine();
         
         }
 
-     static void DeSerialDir(string dirpath)
-        {
-            List<FileSrtuct> list = new List<FileSrtuct>();
-            BinaryFormatter formatter = new BinaryFormatter();
-
-            using (FileStream fs = new FileStream("file.dat", FileMode.OpenOrCreate))
-            {
-                try
-                {
-
-                    FileSrtuct newFileSrtuct = (FileSrtuct)formatter.Deserialize(fs);
-
-
-                    if (!Directory.Exists(dirpath))
-                    {
-                        DirectoryInfo dir = new DirectoryInfo(@"D:\");
-
-                        foreach (var item in list)
-                        {
-                            System.IO.Directory.CreateDirectory(list.ToString());
-                            
-
-                            foreach (var it in list)
-                            {
-                                System.IO.Directory.CreateDirectory(list.ToString());
-
-
-                                foreach (var item2 in list)
-                                {
-                                    File.Create(list.ToString()).Dispose();
-                                }
-                            }
-
-
-                        }
-
-                    }
-
-                    
-                    Console.WriteLine("DeSerialization done");
-                }
-
-                catch
-                {
-                    Console.WriteLine("Error");
-                }
-
-            }
-        }
+     
 
         static void Serialize(string dirpath)
     {
