@@ -86,18 +86,7 @@ namespace GL_TestTask_v_2
 
 
 
-             Console.WriteLine("\n Reading SerializeTest object from disk\n");
-            /* Stream input = File.OpenRead("file.dat");
-             BinaryFormatter bread = new BinaryFormatter();
-             SerializeTest fromdisk = (SerializeTest)bread.Deserialize(input);
-             input.Close();
-             */
-                
-            using (FileStream fs = new FileStream("file.dat", FileMode.OpenOrCreate))
-            {
-                SerializeTest newSerializeTest = (SerializeTest)formatter.Deserialize(fs);
-                
-            }
+           
                 Console.ReadKey();
         }
         }
